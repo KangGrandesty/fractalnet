@@ -9,8 +9,11 @@ A fractal-based neural network architecture:
 Drop-path
 ---------
 We provide a reference implementation for the elementwise-mean layer with local
-drop-path. There is still no public release of local+global, but we suggest
-implementing this through tying weights. 
+drop-path. 
+
+Ideal
+---------
+I use a new layer ``GlobalDropTrigger`` as a messager. It sends information to all the ``FractalJoin`` in the same fractal block, and tells them drop path as global or local.
 
 Caffe
 ~~~~~
@@ -38,3 +41,4 @@ If this is useful to you, please consider citing us::
       year={2016}
     }
 
+~~~~~
